@@ -40,7 +40,7 @@
   <!-- Section Nos Projets (aperçu) -->
   <section class="projects-section">
     <h2 class="projects-title">Nos Projets</h2>
-    <p class="projects-subtitle">Sculpter avec précision</p>
+    <p class="projects-subtitle">Sculptez avec précision</p>
     
     <div class="projects-container">
       <!-- Boucle sur les 3 premiers projets -->
@@ -66,7 +66,7 @@
   <!-- Section Contact -->
   <section id="contact" class="contact-section">
     <h2 class="contact-title">contactez nous</h2>
-    <p class="contact-subtitle">Sculpter votre future</p>
+    <p class="contact-subtitle">Sculpter votre futur</p>
     
     <div class="contact-form">
       <!-- Message de succès -->
