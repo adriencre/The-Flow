@@ -391,19 +391,30 @@ onMounted(() => {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .contact-title {
+    width: auto;
+    font-size: 48px;
+    line-height: 64px;
+  }
   
   .contact-form-container {
     width: 90%;
+    max-width: 776px;
     padding-top: 50px;
   }
   
+  /* Conserver la disposition horizontale des champs nom/prénom */
   .form-row {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
   }
   
   .form-group:not(.full-width) {
-    width: 100%;
-    margin-bottom: 20px;
+    width: calc(50% - 10px);
+    min-width: 250px;
+    flex: 1;
   }
 }
 </style>

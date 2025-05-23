@@ -744,12 +744,17 @@ a {
   }
   
   .form-row {
-    flex-direction: column;
+    flex-direction: row !important;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
   }
   
   .form-group:not(.full-width) {
-    width: 100%;
+    width: calc(50% - 10px);
+    min-width: 250px;
+    flex: 1;
     margin-bottom: 30px;
   }
   

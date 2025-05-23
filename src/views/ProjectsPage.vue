@@ -207,10 +207,11 @@ onMounted(() => {
 .projects-container {
   display: flex;
   justify-content: center;
-  gap: 70px;
+  gap: 70px 90px; /* Augmentation de l'espacement horizontal entre les projets */
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .project-card {
@@ -356,6 +357,63 @@ onMounted(() => {
   
   .project-title {
     font-size: 18px;
+  }
+  
+  /* Styles responsives pour le filtre */
+  .projects-filter {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 15px;
+  }
+  
+  .filter-button {
+    margin: 5px;
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-hero-content h1 {
+    font-size: 48px;
+  }
+  
+  .projects-hero-content p {
+    font-size: 16px;
+  }
+  
+  .projects-filter {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .filter-button {
+    margin: 3px;
+    padding: 6px 12px;
+    font-size: 13px;
+    flex: 0 0 auto;
+  }
+  
+  .projects-container {
+    padding: 10px;
+  }
+  
+  .project-card {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .project-image-container {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 0.8;
+  }
+  
+  .project-image {
+    width: 100%;
+    height: 100%;
   }
 }
 </style>
