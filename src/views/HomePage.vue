@@ -448,8 +448,167 @@ onMounted(() => {
 .project-card {
   text-decoration: none;
   color: inherit;
-
 }
 
+/* Media queries pour les petits écrans */
+@media (max-width: 992px) {
+  .statue-overlay {
+    width: 100%;
+  }
+  
+  .hero-content h1 {
+    font-size: 68px;
+    margin-left: -1.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 20px;
+    margin-left: -1rem;
+  }
+  
+  .cta-button {
+    margin-left: -1rem;
+    width: 280px;
+  }
+  
+  .statue-overlay {
+    opacity: 0.7;
+  }
+  
+  .projects-container {
+    gap: 40px;
+  }
+}
 
+@media (max-width: 768px) {
+  .hero-content {
+    max-width: 60%;
+    margin-bottom: 15%;
+  }
+  
+  .hero-content h1 {
+    font-size: 48px;
+    margin-left: -1rem;
+  }
+  
+  .hero-content p {
+    font-size: 18px;
+    margin-left: -0.5rem;
+    max-width: 90%;
+  }
+  
+  .cta-button {
+    width: 240px;
+    height: 48px;
+    font-size: 14px;
+    margin-left: -0.5rem;
+  }
+  
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .service-card {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .form-group:not(.full-width) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content {
+    max-width: 80%;
+    margin-left: 0;
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 36px;
+    margin-left: 0;
+  }
+  
+  .hero-content p {
+    font-size: 16px;
+    margin-left: 0;
+    max-width: 100%;
+  }
+  
+  .cta-button {
+    margin-left: 0;
+    width: 220px;
+    height: 44px;
+    font-size: 14px;
+  }
+  
+  .statue-overlay {
+    opacity: 0.4;
+  }
+  
+  .services-title, 
+  .projects-title, 
+  .contact-title {
+    font-size: 42px;
+  }
+  
+  .services-subtitle, 
+  .projects-subtitle, 
+  .contact-subtitle {
+    font-size: 18px;
+  }
+  
+  .contact-form {
+    width: 90%;
+
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 32px;
+  }
+  
+  .hero-content p {
+    font-size: 14px;
+  }
+  
+  .services-title, 
+  .projects-title, 
+  .contact-title {
+    font-size: 36px;
+  }
+  
+  .light-effect-1, 
+  .light-effect-2, 
+  .light-effect-3 {
+    opacity: 0.4;
+  }
+  
+  .project-image-container,
+  .project-image {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    aspect-ratio: 0.78;
+  }
+  
+  .project-card {
+    width: 100%;
+    max-width: 280px;
+  }
+}
 </style>
