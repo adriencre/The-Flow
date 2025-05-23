@@ -1,0 +1,515 @@
+/* Import des polices depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
+
+/* Styles globaux */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Styles pour la navbar */
+.navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2rem;
+  z-index: 10;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar ul li {
+  margin-left: 2rem;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+
+
+/* Hero Section */
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  background-image: url('./assets/fond.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Style pour l'overlay de la statue */
+.statue-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 85%;
+  height: 100%;
+  background-image: url('./assets/statue.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.hero-content {
+  padding: 2rem;
+  margin-left: 5%;
+  max-width: 45%;
+  margin-bottom: 10%;
+  position: relative;
+  z-index: 2;
+  margin-top: 10%;
+}
+
+.hero-content h1 {
+  font-size: 88px;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-left: -3rem;
+}
+
+.hero-content p {
+  font-size: 24px;
+  margin-bottom: 2rem;
+  max-width: 75%;
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  font-size: 14px !important;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: white;
+  color: #1C1C1C;
+}
+
+/* Section Nos services */
+.services-section {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #1C1C1C;
+  padding: 100px 0;
+  position: relative;
+}
+
+.services-title {
+  position: relative;
+  width: 356px;
+  height: 15px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  text-align: center;
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 85px;
+  color: #F2EFEA;
+}
+
+.services-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 200px;
+}
+
+.service-card {
+  position: relative;
+  width: 416px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 40px;
+}
+
+.service-card:first-child {
+  margin-left: 208px;
+}
+
+.service-card:last-child {
+  margin-right: 220px;
+}
+
+.service-title {
+  position: relative;
+  width: 332px;
+  height: 43px;
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 43px;
+  color: #F2EFEA;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.service-description {
+  position: relative;
+  width: 416px;
+  height: 48px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #F2EFEA;
+}
+
+/* Styles pour la section Nos Projets */
+.projects-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 0;
+  background-color: #F9F7F4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects-title {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 85px;
+  color: #000000;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.projects-subtitle {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  color: #000000;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  width: 293px;
+  position: relative;
+}
+
+.project-image-container {
+  box-sizing: border-box;
+  width: 289px;
+  height: 372px;
+  border: 1px solid #C8A96A;
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.project-image {
+  box-sizing: border-box;
+  width: 287px;
+  height: 370px;
+  border: 1px solid #C8A96A;
+  object-fit: cover;
+  position: relative;
+}
+
+.project-title {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+.project-category {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #000000;
+}
+
+/* Styles pour la section Contact */
+.contact-section {
+  position: relative;
+  width: 100%;
+  height: 882px;
+  background: #1C1C1C;
+  padding-top: 64px;
+}
+
+.contact-title {
+  position: absolute;
+  width: 431px;
+  height: 85px;
+  left: 504px;
+  top: 64px;
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 85px;
+  color: #F2EFEA;
+}
+
+.contact-subtitle {
+  position: absolute;
+  width: 204px;
+  height: 30px;
+  left: 616px;
+  top: 171px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #F2EFEA;
+}
+
+.contact-form {
+  position: absolute;
+  width: 776px;
+  left: 334px;
+  top: 271px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group label {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+}
+
+.form-group input,
+.form-group textarea {
+  background: transparent;
+  border: none;
+  width: 100%;
+  color: #FFFFFF;
+  font-family: 'Poppins';
+  font-size: 16px;
+  outline: none;
+}
+
+.form-group textarea {
+  resize: none;
+  height: 80px;
+}
+
+.form-line {
+  width: 100%;
+  height: 1px;
+  background: #FFFFFF;
+  margin-top: 5px;
+}
+
+.form-group:not(.full-width) {
+  width: 350px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 36px;
+}
+
+.form-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+}
+
+.form-submit button {
+  width: 316px;
+  height: 52px;
+  background: transparent;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.form-submit button:hover {
+  background-color: #FFFFFF;
+  color: #1C1C1C;
+}
+
+.form-submit button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #FF6B6B;
+  font-family: 'Poppins';
+  font-size: 12px;
+  margin-top: 5px;
+  position: absolute;
+}
+
+.input-error + .form-line {
+  background-color: #FF6B6B;
+}
+
+.form-success {
+  background-color: rgba(39, 174, 96, 0.1);
+  border-left: 4px solid #27AE60;
+  color: #FFFFFF;
+  padding: 15px;
+  margin-bottom: 30px;
+  font-family: 'Poppins';
+  font-size: 14px;
+}
+
+.form-error {
+  background-color: rgba(235, 87, 87, 0.1);
+  border-left: 4px solid #EB5757;
+  color: #FFFFFF;
+  padding: 15px;
+  margin-bottom: 30px;
+  font-family: 'Poppins';
+  font-size: 14px;
+}
+
+/* Styles pour les liens du routeur */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.router-link-active {
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .hero-content h1 {
+    font-size: 64px;
+  }
+  
+  .hero-content p {
+    font-size: 20px;
+  }
+  
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+  
+  .service-card:first-child,
+  .service-card:last-child {
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    max-width: 80%;
+    margin-left: 10%;
+  }
+  
+  .statue-overlay {
+    opacity: 0.6;
+  }
+  
+  .projects-container {
+    gap: 40px;
+  }
+  
+  .contact-title,
+  .contact-subtitle,
+  .contact-form {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .contact-title {
+    margin-bottom: 20px;
+  }
+  
+  .contact-subtitle {
+    margin-bottom: 40px;
+  }
+  
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .form-group:not(.full-width) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
