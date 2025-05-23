@@ -264,7 +264,7 @@ onMounted(() => {
 
 .navbar {
   position: absolute;
-  top: 2rem;
+  top: 0;
   right: 8rem;
   z-index: 10;
 }

@@ -480,6 +480,7 @@ body, html {
 
 .form-success {
   background-color: rgba(39, 174, 96, 0.1);
+
   border-left: 4px solid #27AE60;
   color: #FFFFFF;
   padding: 15px;
