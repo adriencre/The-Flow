@@ -546,11 +546,11 @@ onMounted(() => {
   .hero-content p {
     font-size: 16px;
     margin-left: 0;
-    max-width: 100%;
+    max-width: 80%;
   }
   .cta-button {
   margin-left: 0;
-  width: 180px;
+  width: 130px;
   height: auto; /* Pour que la hauteur s'adapte au contenu */
   font-size: 12px;
   white-space: normal; /* Le texte passe à la ligne si nécessaire */
