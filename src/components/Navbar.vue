@@ -132,8 +132,9 @@ const closeMenu = () => {
     right: 0;
     width: 100%;
     padding: 1rem 2rem;
-    background-color: rgba(28, 28, 28, 0.95); /* Fond semi-transparent */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: transparent; /* Pas de fond */
+    box-shadow: none;
+    z-index: 1500; /* S'assurer que la navbar est au-dessus de tout */
   }
   
   .logo {

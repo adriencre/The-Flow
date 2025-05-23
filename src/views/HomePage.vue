@@ -533,7 +533,8 @@ onMounted(() => {
 @media (max-width: 576px) {
   .hero-content {
     max-width: 80%;
-    margin-left: 0;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
   }
   
@@ -547,14 +548,19 @@ onMounted(() => {
     margin-left: 0;
     max-width: 100%;
   }
-  
   .cta-button {
-    margin-left: 0;
-    width: 220px;
-    height: 44px;
-    font-size: 14px;
-  }
-  
+  margin-left: 0;
+  width: 180px;
+  height: auto; /* Pour que la hauteur s'adapte au contenu */
+  font-size: 12px;
+  white-space: normal; /* Le texte passe à la ligne si nécessaire */
+  line-height: 1.2; /* Réduction de l'espacement entre les lignes */
+  box-sizing: border-box; /* Inclure le padding dans la largeur/hauteur */
+  word-wrap: break-word; /* Couper les mots trop longs */
+  text-align: center; /* Centrer le texte */
+  padding: 10px 12px; /* Optionnel mais souvent utile pour le confort visuel */
+}
+
   .statue-overlay {
     opacity: 0.4;
   }
