@@ -262,34 +262,7 @@ onMounted(() => {
   color: #F2EFEA;
 }
 
-.navbar {
-  position: absolute;
-  top: 0;
-  right: 8rem;
-  z-index: 10;
-}
 
-.navbar ul {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-}
-
-.navbar ul li a {
-  color: white;
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-}
-
-.navbar ul li a:hover,
-.navbar ul li a.router-link-active {
-  color: rgba(255, 255, 255, 0.8);
-  border-bottom: 2px solid white;
-}
 
 .contact-form-container {
   width: 776px;
@@ -418,23 +391,6 @@ onMounted(() => {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .navbar {
-    position: relative;
-    top: 0;
-    right: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-  }
-  
-  .navbar ul {
-    justify-content: center;
-  }
-  
-  .navbar ul li a {
-    margin: 0 15px;
-  }
   
   .contact-form-container {
     width: 90%;
