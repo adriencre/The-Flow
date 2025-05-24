@@ -41,8 +41,8 @@ export const projects = [
       'Responsive design adapté à tous les appareils'
     ],
     links: {
-      live: 'https://mon-portfolio.fr',
-      github: 'https://github.com/adriencrepel/portfolio'
+      live: 'https://the-flow.fr',
+      github: 'https://github.com/adriencre/The-Flow.git'
     },
     gallery: [
       { src: '/images/theflow.png', alt: 'Page d\'accueil du portfolio' },
@@ -66,7 +66,7 @@ export const projects = [
       'Formulaire de contact et appel à mobilisation'
     ],
     links: {
-      live: 'https://cestimportant.com'
+      live: 'https://www.le113.org/'
     },
     gallery: [
       { src: '/images/cestimportant1.png', alt: 'Page d\'accueil C\'est important' },
