@@ -2,6 +2,7 @@
 // Importer useRouter pour accéder aux événements de navigation
 import { onMounted, onUnmounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import PreLoader from './components/PreLoader.vue';
 
 const router = useRouter();
@@ -15,7 +16,13 @@ const onLoaded = () => {
 
 // Fonction pour forcer le défilement vers le haut
 const scrollToTop = () => {
+  // Forcer le scroll immédiatement
   window.scrollTo(0, 0);
+  // Aussi forcer sur document.documentElement pour compatibilité
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+  // Rafraîchir ScrollTrigger pour qu'il prenne en compte la nouvelle position
+  ScrollTrigger.refresh();
 };
 
 // Ajouter un écouteur d'événements pour forcer le défilement vers le haut après chaque navigation
@@ -23,10 +30,22 @@ onMounted(() => {
   // Bloquer le scroll pendant le chargement
   document.body.style.overflow = 'hidden';
   
-  router.afterEach(() => {
+  router.afterEach((to, from) => {
+    // Réinitialiser ScrollTrigger pour éviter les conflits
+    ScrollTrigger.refresh();
+    
+    // Forcer le scroll vers le haut avec plusieurs tentatives pour s'assurer que ça fonctionne
+    scrollToTop();
+    
+    // Double vérification après un court délai
     setTimeout(() => {
       scrollToTop();
-    }, 0);
+    }, 50);
+    
+    // Dernière vérification après le rendu
+    setTimeout(() => {
+      scrollToTop();
+    }, 200);
   });
 });
 </script>

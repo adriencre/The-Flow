@@ -194,19 +194,16 @@ const submitForm = async () => {
 };
 
 onMounted(() => {
+  // Remonter en haut de la page
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+  
   // Animation pour la page contact
-  gsap.from('.contact-hero-content h1', {
+  gsap.from('.contact-title', {
     y: -50,
     opacity: 0,
     duration: 1,
-    ease: 'power3.out'
-  });
-  
-  gsap.from('.contact-hero-content p', {
-    y: 50,
-    opacity: 0,
-    duration: 1,
-    delay: 0.3,
     ease: 'power3.out'
   });
   
@@ -214,7 +211,7 @@ onMounted(() => {
     y: 50,
     opacity: 0,
     duration: 1,
-    delay: 0.5,
+    delay: 0.3,
     ease: 'power2.out'
   });
 });

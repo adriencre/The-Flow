@@ -74,16 +74,6 @@ const project = computed(() => {
   return getProjectBySlug(projectSlug) || null;
 });
 
-// Si le projet n'existe pas, rediriger vers la page des projets
-onMounted(() => {
-  // Remonter en haut de la page
-  window.scrollTo(0, 0);
-  
-  if (!project.value) {
-    router.push('/projets');
-  }
-});
-
 // Projets précédent et suivant pour la navigation
 const prevProject = computed(() => {
   return project.value ? getPreviousProject(project.value.id) : null;
@@ -93,7 +83,18 @@ const nextProject = computed(() => {
   return project.value ? getNextProject(project.value.id) : null;
 });
 
+// Si le projet n'existe pas, rediriger vers la page des projets
 onMounted(() => {
+  // Remonter en haut de la page - forcer sur tous les éléments
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+  
+  if (!project.value) {
+    router.push('/projets');
+    return;
+  }
+  
   // Animations GSAP
   gsap.from('.project-detail-title', {
     y: -50,

@@ -88,8 +88,10 @@ const filterProjects = (filter, event) => {
 };
 
 onMounted(() => {
-  // Remonter en haut de la page
+  // Remonter en haut de la page - forcer sur tous les éléments
   window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
   
   // Animation pour la page projets
   gsap.from('.projects-hero-content h1', {

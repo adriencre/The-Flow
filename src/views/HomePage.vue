@@ -145,8 +145,9 @@
 </template>
 
 <script setup>
-import { onMounted, ref, computed } from 'vue';
+import { onMounted, ref, computed, onUnmounted } from 'vue';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import emailjs from '@emailjs/browser';
 import Navbar from '../components/Navbar.vue';
 import { getAllProjects } from '../data/projects.js';
@@ -386,6 +387,123 @@ onMounted(() => {
   
   // Ajouter la deuxième timeline à la timeline principale
   mainTimeline.add(elementsTimeline);
+  
+  // ===== ANIMATIONS SCROLLTRIGGER =====
+  
+  // Animation de la section Services
+  gsap.from('.service-card', {
+    scrollTrigger: {
+      trigger: '.services-section',
+      start: 'top 80%',
+      end: 'bottom 20%',
+      toggleActions: 'play none none reverse'
+    },
+    y: 100,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.3,
+    ease: 'power3.out'
+  });
+  
+  // Animation du titre Services
+  gsap.from('.services-title', {
+    scrollTrigger: {
+      trigger: '.services-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    y: -50,
+    opacity: 0,
+    duration: 1,
+    ease: 'power3.out'
+  });
+  
+  // Animation de la section Projets
+  gsap.from('.project-card', {
+    scrollTrigger: {
+      trigger: '.projects-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    y: 80,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: 'back.out(1.7)'
+  });
+  
+  // Animation des titres Projets
+  gsap.from('.projects-title, .projects-subtitle', {
+    scrollTrigger: {
+      trigger: '.projects-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    y: -30,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.1,
+    ease: 'power3.out'
+  });
+  
+  // Animation du bouton "Voir tous nos projets"
+  gsap.from('.view-all-button', {
+    scrollTrigger: {
+      trigger: '.view-all-projects',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    scale: 0.8,
+    opacity: 0,
+    duration: 0.6,
+    ease: 'back.out(1.7)'
+  });
+  
+  // Animation de la section Contact
+  gsap.from('.contact-title, .contact-subtitle', {
+    scrollTrigger: {
+      trigger: '.contact-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    y: -40,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+    ease: 'power3.out'
+  });
+  
+  // Animation du formulaire de contact
+  gsap.from('.contact-form', {
+    scrollTrigger: {
+      trigger: '.contact-form',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    ease: 'power3.out'
+  });
+  
+  // Animation des champs du formulaire
+  gsap.from('.form-group', {
+    scrollTrigger: {
+      trigger: '.contact-form',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    x: -30,
+    opacity: 0,
+    duration: 0.6,
+    stagger: 0.1,
+    ease: 'power2.out'
+  });
+});
+
+// Nettoyer les ScrollTriggers lors du démontage du composant
+onUnmounted(() => {
+  ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 });
 </script>
 
