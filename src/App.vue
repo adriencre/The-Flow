@@ -1,9 +1,17 @@
 <script setup>
 // Importer useRouter pour accéder aux événements de navigation
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
+import PreLoader from './components/PreLoader.vue';
 
 const router = useRouter();
+const isLoading = ref(true);
+
+const onLoaded = () => {
+  isLoading.value = false;
+  // Débloquer le scroll une fois le chargement terminé
+  document.body.style.overflow = 'auto';
+};
 
 // Fonction pour forcer le défilement vers le haut
 const scrollToTop = () => {
@@ -12,6 +20,9 @@ const scrollToTop = () => {
 
 // Ajouter un écouteur d'événements pour forcer le défilement vers le haut après chaque navigation
 onMounted(() => {
+  // Bloquer le scroll pendant le chargement
+  document.body.style.overflow = 'hidden';
+  
   router.afterEach(() => {
     setTimeout(() => {
       scrollToTop();
@@ -21,6 +32,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <PreLoader v-if="isLoading" @loaded="onLoaded" />
   <router-view />
 </template>
 
