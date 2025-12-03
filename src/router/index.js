@@ -1,29 +1,25 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomePage from '../views/HomePage.vue';
-import ProjectsPage from '../views/ProjectsPage.vue';
-import ContactPage from '../views/ContactPage.vue';
-import ProjectDetailPage from '../views/ProjectDetailPage.vue';
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: HomePage
+    component: () => import('../views/HomePage.vue')
   },
   {
     path: '/projets',
     name: 'Projects',
-    component: ProjectsPage
+    component: () => import('../views/ProjectsPage.vue')
   },
   {
     path: '/projet/:slug',
     name: 'ProjectDetail',
-    component: ProjectDetailPage
+    component: () => import('../views/ProjectDetailPage.vue')
   },
   {
     path: '/contact',
     name: 'Contact',
-    component: ContactPage
+    component: () => import('../views/ContactPage.vue')
   }
 ];
 

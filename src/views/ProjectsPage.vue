@@ -26,7 +26,7 @@
         class="project-card"
       >
         <div class="project-image-container">
-          <img :src="project.image" :alt="project.title" class="project-image">
+          <img :src="project.image" :alt="project.title" class="project-image" loading="lazy" decoding="async">
         </div>
         <h3 class="project-title">{{ project.title }}</h3>
         <p class="project-category">{{ project.category }}</p>

@@ -10,6 +10,25 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
+  build: {
+    minify: 'esbuild',
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('gsap')) {
+              return 'gsap'; // Séparer GSAP qui est lourd
+            }
+            if (id.includes('vue')) {
+              return 'vue'; // Séparer Vue core
+            }
+            return 'vendor'; // Le reste des dépendances
+          }
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000,
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

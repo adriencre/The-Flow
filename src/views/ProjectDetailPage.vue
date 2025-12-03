@@ -47,7 +47,7 @@
         <h2>Galerie</h2>
         <div class="gallery-images">
           <div v-for="(image, index) in project.gallery" :key="index" class="gallery-image-container">
-            <img :src="image.src" :alt="image.alt" class="gallery-image">
+            <img :src="image.src" :alt="image.alt" class="gallery-image" loading="lazy" decoding="async">
           </div>
         </div>
       </div>

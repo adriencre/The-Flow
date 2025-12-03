@@ -24,13 +24,13 @@
     
     <div class="services-container">
       <div class="service-card">
-        <img src="/images/image 4.svg" alt="Icône développement web" class="service-icon">
+        <img src="/images/image 4.svg" alt="Icône développement web" class="service-icon" loading="lazy" decoding="async">
         <h3 class="service-title">Développement web</h3>
         <p class="service-description">Des sites élégants, rapides et sur-mesure, sculptés pour refléter votre identité et atteindre vos objectifs</p>
       </div>
       
       <div class="service-card">
-        <img src="/images/image 5.svg" alt="Icône développement mobile" class="service-icon">
+        <img src="/images/image 5.svg" alt="Icône développement mobile" class="service-icon" loading="lazy" decoding="async">
         <h3 class="service-title">Développement mobile</h3>
         <p class="service-description">Des applications fluides et intuitives, pensées pour offrir une expérience optimale sur chaque écran</p>
       </div>
@@ -51,7 +51,7 @@
         class="project-card"
       >
         <div class="project-image-container">
-          <img :src="project.image" :alt="'Projet ' + project.title" class="project-image">
+          <img :src="project.image" :alt="'Projet ' + project.title" class="project-image" loading="lazy" decoding="async">
         </div>
         <h3 class="project-title">{{ project.title }}</h3>
         <p class="project-category">{{ project.category }}</p>
